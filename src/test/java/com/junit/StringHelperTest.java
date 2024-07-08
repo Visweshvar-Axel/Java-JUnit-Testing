@@ -14,7 +14,7 @@ class StringHelperTest {
 		//AACD -> CD ACD -> CD CDAA -> CDAA
 	   //expected: <ABC> but was: <Abc>
 	@Test
-	void test_truncateAInFirst2Positions_AinFirst2position() {
+	public void test_truncateAInFirst2Positions_AinFirst2position() {
 		assertEquals("CD", helper.truncateAInFirst2Positions("AACD"));
 	}
 
