@@ -1,14 +1,18 @@
 package com.junit;
 
-import org.junit.jupiter.api.Test;
+import com.junit.StringHelper;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
 import java.util.Collection;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
 
-//@RunsWith(Parameterized.class)
-class StringHelperParameterizedTest {
+@RunWith(Parameterized.class)
+public class StringHelperParameterizedTest {
+
 	StringHelper helper = new StringHelper();
 	private String input;
 	private String expected;
@@ -18,14 +22,17 @@ class StringHelperParameterizedTest {
 		this.expected = expected;
 	}
 
-//	@Parameters
-	public static Collection<String[]> testConditions(){
-		String expectedOutput[][] = {{"AACD","CD"},
-		{"ACD","CD"}};
-		return Arrays.asList(expectedOutput);
+	@Parameterized.Parameters
+	public static Collection<String[]> testConditions() {
+		String expectedOutputs[][] = {
+				{"AACD", "CD"},
+				{"ACD", "CD"}
+		};
+		return Arrays.asList(expectedOutputs);
 	}
+
 	@Test
-	void test_truncateAInFirst2Positions_AinFirst2position() {
-		assertEquals(expected, input);
+	public void test_truncateAInFirst2Positions() {
+		assertEquals(expected, helper.truncateAInFirst2Positions(input));
 	}
 }
