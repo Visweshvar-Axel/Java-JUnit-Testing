@@ -36,4 +36,16 @@ class StringHelperTest {
 	public void test_areFirstAndLastTwoCharactersTheSame_BAsicNegativeScenario(){
 		assertFalse(helper.areFirstAndLastTwoCharactersTheSame("ABCD"),"Expected false");
 	}
+	@Test
+	public void test_areFirstAndLastTwoCharactersTheSame_BAsicPositiveScenario(){
+		assertTrue(helper.areFirstAndLastTwoCharactersTheSame("ABAB"));
+	}
+	@Test
+	public void test_areFirstAndLastTwoCharactersTheSame_BAsicPositiveScenarioAB(){
+		assertTrue(helper.areFirstAndLastTwoCharactersTheSame("AB"));
+	}
+	@Test
+	public void test_areFirstAndLastTwoCharactersTheSame_BAsicNegativeScenarioA(){
+		assertFalse(helper.areFirstAndLastTwoCharactersTheSame("A"));
+	}
 }
