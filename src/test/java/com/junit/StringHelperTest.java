@@ -13,8 +13,10 @@ class StringHelperTest {
 //		String actual = helper.truncateAInFirst2Positions("AACD");
 //		String expected = "CD";
 //		assertEquals(expected,actual);
+		//AACD -> CD ACD -> CD CDAA -> CDAA
 		assertEquals("CD", helper.truncateAInFirst2Positions("AACD"));
+		assertEquals("CD", helper.truncateAInFirst2Positions("ACD"));
+	   //expected: <ABC> but was: <Abc>
 	}
-   //	expected: <ABC> but was: <Abc>
 
 }
