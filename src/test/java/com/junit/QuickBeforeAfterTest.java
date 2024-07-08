@@ -1,11 +1,18 @@
 package com.junit;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 public class QuickBeforeAfterTest {
     StringHelper helper;
+    @BeforeAll
+    public static void beforeClass(){
+        System.out.println("Before class");
+        // if needed only for optimization
+    }
+    @AfterAll
+    public static void afterClass(){
+        System.out.println("After class");
+    }
     @BeforeEach
     public void setup(){
         System.out.println("Before test");
