@@ -4,8 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ArraysCompareTest {
 
@@ -20,9 +19,19 @@ public class ArraysCompareTest {
         assertArrayEquals(expected,numbers);
         // array contents differ at index [1], expected: <4> but was: <3>
     }
-    @Test(expected=NullPointerException.class)
+//    old version
+//    @Test(expected=NullPointerException.class)
+//    public void testArraySort_NullArray(){
+//        int[] numbers = null;
+//        Arrays.sort(numbers);
+//    }
+    @Test
     public void testArraySort_NullArray(){
         int[] numbers = null;
-        Arrays.sort(numbers);
+        NullPointerException exception = assertThrows(NullPointerException.class, () -> {
+            Arrays.sort(numbers);
+        });
+//        Arrays.sort(numbers);
+        assertNotNull(exception);
     }
 }
