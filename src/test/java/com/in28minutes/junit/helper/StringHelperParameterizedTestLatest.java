@@ -3,8 +3,6 @@ package com.in28minutes.junit.helper;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import javax.management.ConstructorParameters;
-
 import static org.junit.Assert.*;
 
 public class StringHelperParameterizedTestLatest {
