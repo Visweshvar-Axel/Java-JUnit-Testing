@@ -1,5 +1,9 @@
 package helper;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.jupiter.api.*;
 
 import java.util.Arrays;
 
@@ -7,8 +11,40 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ArraysCompareTest {
 
-    // Arrays.sort
+    @BeforeClass
+    public static void SetupBeforeClass(){
+        System.out.println("BeforeClass");
+    }
+    @AfterClass
+    public static void SetupAfterClass(){
+        System.out.println("AfterClass");
+    }
+    @BeforeAll
+    public static void SetupBeforeAll(){
+        System.out.println("BeforeAll");
+    }
+    @AfterAll
+    public static void SetupAfterAll(){
+        System.out.println("AfterAll");
+    }
 
+    // Arrays.sort
+    @Before
+    public void Before(){
+        System.out.println("Before");
+    }
+    @After
+    public void After(){
+        System.out.println("After");
+    }
+    @BeforeEach
+    public void BeforeEach(){
+        System.out.println("BeforeEach");
+    }
+    @AfterEach
+    public void AfterEach(){
+        System.out.println("AfterEach");
+    }
     @Test
     public void testArraySort_RandomArray(){
         int[] numbers = {12,3,4,1};
@@ -52,4 +88,14 @@ public class ArraysCompareTest {
             }
         });
     }
+    /* *
+     * BeforeAll
+     * BeforeEach
+     * AfterEach
+     * BeforeEach
+     * AfterEach
+     * BeforeEach
+     * AfterEach
+     * AfterAll
+     * */
 }
