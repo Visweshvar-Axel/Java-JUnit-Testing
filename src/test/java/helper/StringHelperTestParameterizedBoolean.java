@@ -11,10 +11,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @RunWith(Parameterized.class)
 public class StringHelperTestParameterizedBoolean {
 	StringHelper helper = new StringHelper();
-
 	private String input;
 	private String expected;
-
 	public StringHelperTestParameterizedBoolean(String input, String expected) {
 		this.input = input;
 		this.expected = expected;
